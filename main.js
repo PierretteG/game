@@ -115,7 +115,7 @@ function priStiskuKlavesy(udalost) {
 		pocetMinci++;
 		score.innerText = pocetMinci;
 
-		if (pocetMinci === 2) {
+		if (pocetMinci === 10) {
 			score.innerText = 'Vyhral jsi!';
 			vyhrano = true;
 			fanfara.play();
@@ -148,7 +148,7 @@ function umistiMinci() {
 
 function pohniMouchou() {
 
-	if (prohrano) {
+	if (prohrano || vyhrano) {
 		return;
 	}
 
@@ -192,11 +192,11 @@ function pohniMouchou() {
 		document.querySelector('#zivoty').src = 'obrazky/srdce-' + pocetZivotu + '.png';
 
 
-		// if (pocetZivotu === 0) {
-			// zivoty.src = document.querySelector('#zivoty0');
-			// score.innerText = 'Game over :(';
-			// prohrano = true;
-		// }
+		if (pocetZivotu === 0) {
+			document.querySelector('#zivoty').src = 'obrazky/srdce-0.png';
+			score.innerText = 'Game over :(';
+			prohrano = true;
+		}
 
 	}
 
