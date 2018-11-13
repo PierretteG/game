@@ -116,7 +116,9 @@ function priStiskuKlavesy(udalost) {
 		score.innerText = pocetMinci;
 
 		if (pocetMinci === 10) {
-			score.innerText = 'Vyhral jsi!';
+			score.innerText = 'You won! Play again?';
+			score.style.top = (window.innerHeight / 2.5) + 'px';
+			score.style.left = (window.innerWidth / 5) + 'px';
 			vyhrano = true;
 			fanfara.play();
 			hratZnovu();
