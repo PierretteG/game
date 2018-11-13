@@ -119,6 +119,7 @@ function priStiskuKlavesy(udalost) {
 			score.innerText = 'Vyhral jsi!';
 			vyhrano = true;
 			fanfara.play();
+			hratZnovu();
 
 
 		}
