@@ -48,7 +48,7 @@ umistiPanacka();
 // vygeneruje náhodnou polohu a minci tam umístíme
 umistiMinci();
 
-setInterval(pohniMouchou, 500);
+setInterval(pohniMouchou, 200);
 
 
 
@@ -194,8 +194,11 @@ function pohniMouchou() {
 
 		if (pocetZivotu === 0) {
 			document.querySelector('#zivoty').src = 'obrazky/srdce-0.png';
-			score.innerText = 'Game over :(';
+			score.innerText = 'Game over :( Play again?';
+			score.style.top = (window.innerHeight / 2.5) + 'px';
+			score.style.left = (window.innerWidth / 5) + 'px';
 			prohrano = true;
+			hratZnovu();
 		}
 
 	}
@@ -203,4 +206,19 @@ function pohniMouchou() {
 
 	moucha.style.left = mouchaX + 'px';
 	moucha.style.top = mouchaY + 'px';
+}
+
+function hratZnovu() {
+	let buttonGroup =  document.querySelector('#button-group') 
+	buttonGroup.style.display = 'block';
+	buttonGroup.style.top = (window.innerHeight / 2) + 'px';
+	buttonGroup.style.left = (window.innerWidth / 2.5) + 'px';
+}
+
+function yes() {
+	window.location.reload();
+}
+
+function no() {
+	window.close();
 }
